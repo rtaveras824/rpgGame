@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Street Fighter RPG</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="relative">
+
+		<div class="title">
+			<img src="assets/images/title.jpg"><button class="btn btn-default start" data-start="Yes">Play Game</button>
+		</div>
+
+		<div class="playerselect fluid-container">
+			<div class="row">
+				<img class="col-xs-6 playerselectable" src="assets/images/player1select.jpg" data-player="ryu">
+				<img class="col-xs-6 playerselectable" src="assets/images/player2select.jpg" data-player="chunli">
+			</div>
+		</div>
+
+		<div class="enemyselect fluid-container">
+			<div class="row">
+				<img class="col-xs-3 enemyselectable" src="assets/images/enemy1select.jpg" data-enemy="bison">
+				<img class="col-xs-3 enemyselectable" src="assets/images/enemy2select.jpg" data-enemy="sagat">
+				<img class="col-xs-3 enemyselectable" src="assets/images/enemy3select.jpg" data-enemy="vega">
+				<img class="col-xs-3 enemyselectable" src="assets/images/enemy4select.jpg" data-enemy="blanka">
+			</div>
+		</div>
+
+		<div class="fight">
+			<div class="stage">
+				<button class="btn btn-default play"></button>
+				<button class="btn btn-default choose"></button>
+				<div class="player health"><div class="player healthloss"></div></div>
+				<div class="enemy health"><div class="enemy healthloss"></div></div>
+				<div class="player holder"><img src="assets/images/idle.jpg"></div>
+				<div class="enemy holder"><img src="assets/images/idle.jpg"></div>
+				<img src="assets/images/stage.jpg">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<script type="text/javascript" src="assets/javascript/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>

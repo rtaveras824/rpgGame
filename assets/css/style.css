@@ -1,0 +1,112 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+
+.relative {
+	background: purple;
+	position: relative;
+
+}
+
+.title {
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: black;
+}
+
+.playerselect {
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: green;
+}
+
+.enemyselect {
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: blue;
+}
+
+.stage {
+	position: relative;
+}
+
+.holder {
+	
+	display: inline-block;
+	position: absolute;
+	bottom: 10%;
+}
+
+.player.holder {
+	left: 15%;
+}
+
+.enemy.holder {
+	right: 15%;
+	transform: scaleX(-1);
+}
+
+.health {
+	background: yellow;
+	border: 3px solid white;
+	width: 300px;
+	height: 20px;
+	position: absolute;
+	top: 10%;
+}
+
+.player.health {
+	left: 10%;
+}
+
+.enemy.health {
+	right: 10%;
+}
+
+.healthloss {
+	background: red;
+	width: 100%;
+	height: 100%;
+}
+
+.playerselectable {
+	position: absolute;
+	left: 0%;
+	padding: 0;
+	height: 100%;
+}
+
+.playerselectable:nth-of-type(2) {
+	position: absolute;
+	left: 50%;
+}
+
+.enemyselectable {
+	position: absolute;
+	left: 0%;
+	padding: 0;
+}
+
+.enemyselectable:nth-of-type(2) {
+	position: absolute;
+	left: 25%;
+}
+
+.enemyselectable:nth-of-type(3) {
+	position: absolute;
+	left: 50%;
+}
+
+.enemyselectable:nth-of-type(4) {
+	position: absolute;
+	left: 75%;
+}
+
+
