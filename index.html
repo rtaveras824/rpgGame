@@ -2,44 +2,86 @@
 <html>
 <head>
 	<title>Street Fighter RPG</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="fluid-container text-center">
 	<div class="relative">
 
 		<div class="title">
-			<img src="assets/images/title.jpg"><button class="btn btn-default start" data-start="Yes">Play Game</button>
+			<img class="img-responsive" src="assets/images/title.jpg">
+			<button class="btn btn-default start" data-start="Yes">Play Game</button>
 		</div>
+		<audio autoplay>
+				<source src="assets/sounds/intro.mp3" type="audio/mpeg">
+			</audio>
+		<audio>
+			<source src="assets/sounds/choose.mp3" type="audio/mpeg">
+		</audio>
+		<audio>
+			<source src="assets/sounds/hadouken.mp3" type="audio/mpeg">
+		</audio>
+		<audio>
+			<source src="assets/sounds/housenka.mp3" type="audio/mpeg">
+		</audio>
+		<audio loop>
+			<source src="assets/sounds/kenstage.mp3" type="audio/mpeg">
+		</audio>
 
-		<div class="playerselect fluid-container">
+		<div class="playerselect">
 			<div class="row">
-				<img class="col-xs-6 playerselectable" src="assets/images/player1select.jpg" data-player="ryu">
-				<img class="col-xs-6 playerselectable" src="assets/images/player2select.jpg" data-player="chunli">
+				<img class="col-xs-6 playerselectable" src="assets/images/ryu/ryu.jpeg" data-player="ryu">
+				
+				<img class="col-xs-6 playerselectable" src="assets/images/chunli/chunli.jpg" data-player="chunli">
 			</div>
 		</div>
 
-		<div class="enemyselect fluid-container">
+		<div class="enemyselect">
 			<div class="row">
-				<img class="col-xs-3 enemyselectable" src="assets/images/enemy1select.jpg" data-enemy="bison">
-				<img class="col-xs-3 enemyselectable" src="assets/images/enemy2select.jpg" data-enemy="sagat">
-				<img class="col-xs-3 enemyselectable" src="assets/images/enemy3select.jpg" data-enemy="vega">
-				<img class="col-xs-3 enemyselectable" src="assets/images/enemy4select.jpg" data-enemy="blanka">
+				<img class="col-xs-3 enemyselectable" src="assets/images/bison/bison.jpeg" data-enemy="bison">
+				<img class="col-xs-3 enemyselectable" src="assets/images/sagat/sagat.jpeg" data-enemy="sagat">
+				<img class="col-xs-3 enemyselectable" src="assets/images/vega/vega.jpeg" data-enemy="vega">
+				<img class="col-xs-3 enemyselectable" src="assets/images/blanka/blanka.jpeg" data-enemy="blanka">
 			</div>
 		</div>
 
 		<div class="fight">
-			<div class="stage">
-				<button class="btn btn-default play"></button>
-				<button class="btn btn-default choose"></button>
-				<div class="player health"><div class="player healthloss"></div></div>
-				<div class="enemy health"><div class="enemy healthloss"></div></div>
-				<div class="player holder"><img src="assets/images/idle.jpg"></div>
-				<div class="enemy holder"><img src="assets/images/idle.jpg"></div>
-				<img src="assets/images/stage.jpg">
+			<div>
+				<div class="stage text-center">
+					<h1 class="outcome"></h1>
+					<div class="player health"><div class="player healthloss"></div></div>
+					<div class="enemy health"><div class="enemy healthloss"></div></div>
+					<div class="player holder"><img src="assets/images/idle.jpg"></div>
+					<div class="enemy holder"><img src="assets/images/idle.jpg"></div>
+					
+					<img src="assets/images/stage.jpg">
+				</div>
+				<div>
+					<button class="btn btn-default play"></button>
+					<button class="btn btn-default choose"></button>
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Move List</h3>
+					  </div>
+					  <div class="panel-body">
+					   <p>Basic Attack: P</p>
+					   <p>Special Attack: 
+					   <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					   +
+					   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+					   +
+					   P
+					   </p>
+					  </div>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 

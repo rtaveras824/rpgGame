@@ -8,6 +8,8 @@ var atk;
 var page;
 var turn = true;
 
+
+
 function SetCharacter(name, health, atk, playable) {
 	var character = {
 		name: name,
@@ -63,6 +65,10 @@ function comboCheck(character, key) {
 			else
 				window.setTimeout(function() {changeCharacterAnimation("player", player.name, "idle")}, 1200);
 			console.log("Combo Complete");
+			if (player.name == "ryu")
+				$("audio")[2].play();
+			else
+				$("audio")[3].play();
 			return character.atk + 10;
 		} else {
 			if(key == character.combo.basic) {
@@ -111,21 +117,23 @@ $(document).on("keydown", function(e) {
 					//You Win
 					$(".enemyselectable[data-enemy='" + enemy.name + "']").addClass("defeated");
 					if($(".enemyselectable").length !== $(".defeated").length) {
+						$(".outcome").text("You Win!");
 						$(".choose").text("Choose Another Enemy");
 						$(".choose").show();
 						$(".choose").on("click", function() {
+							$("audio")[4].pause();
 							turn = true;
 							player.health = total_playerhealth;
 							setHealth("player", 0, total_playerhealth);
 							player.atk += 10;
+							$(".outcome").text("");
 							$(".enemyselect").show();
 							$(".notselected").slideDown(300);
 							$(".enemyselectable").removeClass("selected notselected");
 							$(".choose").hide();
-							
 						});
 					} else {
-						console.log("You Win!");
+						$(".outcome").text("GAME WON!");
 					}
 				} else {
 					window.setTimeout(function() {enemyAttack()}, 2000);
@@ -161,10 +169,13 @@ function enemyAttack() {
 		else
 			window.setTimeout(function() {changeCharacterAnimation("enemy", enemy.name, "win")}, 1000);
 		//You Lose
+		$(".outcome").text("You Lose!");
 		$(".play").text("Play again");
 		$(".play").show();
 		$(".play").on("click", function() {
+			$("audio")[4].pause();
 			turn = true;
+			$(".outcome").text("");
 			player.health = total_playerhealth;
 			enemy.health = total_enemyhealth;
 			player.atk = atk;
@@ -193,6 +204,7 @@ $(".start").on("click", function() {
 
 $(".playerselectable").on("click", function() {
 	if($(this).data('player')) {
+		$("audio")[1].play();
 		$(".playerselectable").addClass("notselected");
 		$(this).removeClass("notselected");
 		$(this).addClass("selected");
@@ -209,6 +221,7 @@ $(".playerselectable").on("click", function() {
 $(".enemyselectable").on("click", function() {
 	if (!$(this).hasClass("defeated")){
 		if($(this).data('enemy')) {
+			$("audio")[1].play();
 			$(".enemyselectable").addClass("notselected");
 			$(this).removeClass("notselected");
 			$(this).addClass("selected");
@@ -228,20 +241,22 @@ function selectedAnimation () {
 
 		$(".selected").animate({
 			opacity: "toggle",
-			}, 80)
+			}, 65)
 			.animate({
 			opacity: "toggle",
-			}, 80)
+			}, 65)
 			.animate({
 			opacity: "toggle",
-			}, 80)
+			}, 65)
 			.animate({
 			opacity: "toggle",
-			}, 80)
+			}, 65)
 			.delay(1000)
 			.queue(function() {
 				$(page).fadeOut(300, function() {
-					console.log("FADE DAMMIT");
+					if(page == ".enemyselect") {
+						$("audio")[4].play();
+					}
 					$(page).hide();
 				})
 				$(".selected").dequeue();
