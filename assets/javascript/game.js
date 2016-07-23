@@ -95,9 +95,9 @@ function setHealth(who, attack, health) {
 
 var ryu = new SetCharacter("ryu", 100, 12, true);
 var chunli = new SetCharacter("chunli", 100, 12, true);
-var bison = new SetCharacter("bison", 100, 30, false);
-var sagat = new SetCharacter("sagat", 100, 20, false);
-var vega = new SetCharacter("vega", 100, 15, false);
+var bison = new SetCharacter("bison", 220, 30, false);
+var sagat = new SetCharacter("sagat", 180, 20, false);
+var vega = new SetCharacter("vega", 150, 15, false);
 var blanka = new SetCharacter("blanka", 100, 10, false);
 
 
